@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Notre Agence</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #2c3e50; /* Gris anthracite */
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar - Sticky */
+        nav {
+            background-color: #34495e; /* Gris anthracite clair */
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Assurez-vous que la barre soit au-dessus du contenu */
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet de profondeur */
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2ecc71; /* Vert */
+        }
+
+        nav a.active {
+            background-color: #f1c40f; /* Jaune */
+        }
+
+        /* Blog Section */
+        .blog-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .read-more {
+            color: #2ecc71; /* Vert */
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #2c3e50; /* Gris anthracite */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: #2ecc71; /* Vert */
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        Blog de Notre Agence
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="devis.html">Devis</a>
+        <a href="TailleDeBenne.html">Taille de Benne</a>
+        <a href="services.html">Services</a>
+        <a href="tel:+33614191291">06 14 19 12 91</a>
+    </nav>
+
+    <div class="blog-container">
+
+        <!-- Article 1 : Syndrome de Diogène -->
+        <div class="blog-post">
+            <img src="images/diogène.jpg" alt="Syndrome de Diogène">
+            <h2>Syndrome de Diogène : Quand l'accumulation devient un danger</h2>
+            <p>Le syndrome de Diogène est une maladie psychologique qui touche de nombreuses personnes. Découvrez ce trouble du comportement et comment notre agence peut vous aider à gérer cette situation difficile.</p>
+            <div class="more-content">
+                <p>Le syndrome de Diogène est souvent mal compris. Ce trouble du comportement se caractérise par une accumulation excessive d'objets, de déchets et parfois même de déjections humaines. Cette pathologie est souvent liée à des troubles psychiatriques comme la dépression ou les troubles obsessionnels compulsifs (TOC). Les personnes atteintes de ce syndrome peuvent vivre dans des conditions extrêmement insalubres, ce qui peut entraîner des problèmes de santé et un isolement social important.</p>
+                <p><strong>Notre agence propose un service dédié pour les personnes atteintes du syndrome de Diogène. Nous vous aidons à désencombrer, nettoyer et gérer les déchets de manière professionnelle et respectueuse des personnes concernées. Notre équipe intervient rapidement et efficacement pour rétablir un environnement de vie sain.</strong></p>
+            </div>
+            <a href="#" class="read-more" onclick="toggleContent(event, this)">Lire la suite</a>
+        </div>
+
+        <!-- Article 2 : Les types de Bennes -->
+        <div class="blog-post">
+            <img src="images/locbenne.jpg" alt="Les types de bennes">
+            <h2>Les Différents Types de Bennes pour Vos Déchets</h2>
+            <p>Nous vous proposons une gamme complète de bennes pour répondre à tous vos besoins : gravats, déchets mixtes, déchets verts, bois, et plus encore. Découvrez nos solutions éco-responsables.</p>
+            <div class="more-content">
+                <p>Chez nous, nous avons plusieurs types de bennes pour répondre à des besoins spécifiques : 
+                <ul>
+                    <li><strong>Benne à gravats :</strong> Pour les déchets liés aux travaux de construction et de rénovation.</li>
+                    <li><strong>Benne à déchets mixtes :</strong> Pour les déchets variés qui ne rentrent pas dans une catégorie spécifique.</li>
+                    <li><strong>Benne à déchets verts :</strong> Parfaite pour les déchets d’entretien de jardin.</li>
+                    <li><strong>Benne à bois et cartons :</strong> Pour le recyclage du bois et du carton.</li>
+                    <li><strong>Benne DIB (Déchets Industriels Banals) :</strong> Pour des déchets industriels non dangereux mais volumineux.</li>
+                </ul>
+                Nous mettons un point d'honneur à être éco-responsables et à promouvoir le recyclage de vos déchets. Chaque type de benne est conçu pour une gestion optimisée des déchets, dans le respect de l’environnement. Nos bennes sont adaptées à tout type de projet et vous permettent de gérer vos déchets de manière simple et efficace.</p>
+            </div>
+            <a href="#" class="read-more" onclick="toggleContent(event, this)">Lire la suite</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SpeedBenne | <a href="mailto:contact@speedbenne.com">Contactez-nous</a></p>
+    </footer>
+
+    <script>
+        function toggleContent(event, button) {
+            event.preventDefault(); // Empêche le comportement par défaut (faire défiler en haut)
+            const post = button.closest('.blog-post');
+            const content = post.querySelector('.more-content');
+            const readMoreButton = post.querySelector('.read-more');
+            
+            content.style.display = 'block';  // Afficher le texte
+            readMoreButton.style.display = 'none';  // Cacher le bouton
+        }
+    </script>
+
+</body>
+</html>

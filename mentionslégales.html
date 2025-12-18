@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions Légales</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Barre de navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #388e3c;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc80;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4caf50, #388e3c);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #e0e0e0;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      font-size: 24px;
+      color: #388e3c;
+      border-left: 4px solid #4caf50;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 16px;
+      margin: 10px 0;
+      text-align: justify;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #388e3c;
+      color: white;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ffcc80;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav>
+    <div class="logo">Speed Benne</div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="devis.html">Devis</a></li>
+      <li><a href="TailleDeBenne.html">Taille de Benne</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- En-tête -->
+  <header>
+    <h1>Mentions Légales</h1>
+    <p>Tout ce que vous devez savoir sur la gestion de votre site</p>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <section id="accueil">
+      <h2>1. Informations sur l'éditeur du site</h2>
+      <p>
+        <strong>Nom de l'entreprise :</strong> Speed Benne<br>
+        <strong>Statut juridique :</strong> SAS (Société par Actions Simplifiée)<br>
+        <strong>Siège social :</strong> 5 rue de la Rivière, 67120 Duppigheim<br>
+        <strong>Numéro SIRET :</strong> 123 456 789 00012<br>
+        <strong>Directeur de publication :</strong> [Nom du responsable]<br>
+        <strong>Contact :</strong> <a href="mailto:contact@speedbenne.com">contact@speedbenne.com</a> / 06 14 19 12 91
+      </p>
+    </section>
+    <section id="services">
+      <h2>2. Hébergeur du site</h2>
+      <p>
+        <strong>Nom :</strong> OVH<br>
+        <strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France<br>
+        <strong>Site web :</strong> <a href="https://www.ovhcloud.com" target="_blank">www.ovhcloud.com</a><br>
+        <strong>Contact :</strong> 1007
+      </p>
+    </section>
+    <section id="devis">
+      <h2>3. Propriété intellectuelle</h2>
+      <p>
+        Le contenu du site (textes, images, vidéos, logos, etc.) est protégé par le droit d'auteur et est la propriété exclusive de Speed Benne.
+        Toute reproduction ou utilisation, même partielle, sans autorisation préalable est strictement interdite.
+      </p>
+    </section>
+    <section id="taille-benne">
+      <h2>4. Données personnelles</h2>
+      <p>
+        Le site collecte vos données personnelles dans le cadre des formulaires de contact ou de demande de devis.
+        Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.
+        Pour exercer vos droits, veuillez nous contacter à <a href="mailto:contact@speedbenne.com">contact@speedbenne.com</a>.
+      </p>
+    </section>
+    <section id="blog">
+      <h2>5. Responsabilité</h2>
+      <p>
+        L'entreprise Speed Benne s'efforce de fournir des informations à jour et exactes. Cependant, nous ne pouvons être tenus responsables des erreurs ou omissions éventuelles.
+        Les liens externes présents sur le site ne relèvent pas de notre responsabilité.
+      </p>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2024 Speed Benne - <a href="index.html">Retour au site</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image Slider</title>
+
+    <link rel="stylesheet" href="TailleDeBenneSupp/TailleDeBenne.css">
+
+</head>
+<body>
+    
+    <header>
+
+        <nav>
+            <a href="TailleDeBenne.html" class="active">TailleDeBenne</a>
+            <a href="devis.html">devis</a>
+            <a href="services.html">services</a>
+            <a href="blog.html">blog</a>
+            <a href="tel:+33655555555">06 14 19 12 91</a>
+        </nav>
+
+    </header>
+
+
+    <div class="carousel">
+
+        <div class="list">
+
+            <div class="item" style="background-image: url(images/GrandesBennes.jpg);">
+                <div class="content">
+                    <div class="title">De GROS Projets ?</div>
+                    <div class="name">Nos Grandes Bennes</div>
+                    <div class="des"><span class="highlight">Nous offrons des locations de benne de 15 à 30 m<sup>3</sup> afin de gérer des chantiers importants.</span></div>
+                    <div class="btn">
+                        <button><div class="header" onclick="window.location.href='index.html'">Accueil</div></button>
+                        <button><div class="header" onclick="window.location.href='devis.html'">Devis Gratuit</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url(images/chantier.jpg);">
+                
+                <div class="content">
+                    <div class="title">Nos Bennes</div>
+                    <div class="name">SpeedBenne</div>
+                    <div class="des"><span class="highlight">SpeedBenne vous propose différentes taille pour votre benne. Allant de 3 à 30 m<sup>3</sup> afin de s'adapter au mieux aux besoins de chacun que vous soyez un particulier ou un professionnel.</span></div>
+                    <div class="btn">
+                        <button><div class="header" onclick="window.location.href='index.html'">Accueil</div></button>
+                        <button><div class="header" onclick="window.location.href='devis.html'">Devis Gratuit</div></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(images/PetitesBennes.jpg);">
+
+                <div class="content">
+                    <div class="title">Un petit projet ?</div>
+                    <div class="name">Optez pour une solution adaptée</div>
+                    <div class="des"><span class="highlight">Nous vous donnons la possibilité de choisir une benne adapté à un projet de taille modeste. Les tailles proposées étant les suivantes: 3m<sup>3</sup>,5m<sup>3</sup> et 10m<sup>3</sup>.</span></div>
+                    <div class="btn">
+                        <button><div class="header" onclick="window.location.href='index.html'">Accueil</div></button>
+                        <button><div class="header" onclick="window.location.href='devis.html'">Devis Gratuit</div></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(images/locbenne.jpg);">
+                
+                <div class="content">
+                    <div class="title">Besoin d'une benne ?</div>
+                    <div class="name">Découvrez notre gamme</div>
+                    <div class="des"><span class="highlight">Trouvez la benne dont vous avez besoin afin de mener à bien vos projets. Les tailles pour un projet de taille moyenne sont : 10m<sup>3</sup> et 15m<sup>3</sup></span></div>
+                    <div class="btn">
+                        <button><div class="header" onclick="window.location.href='index.html'">Accueil</div></button>
+                        <button><div class="header" onclick="window.location.href='devis.html'">Devis Gratuit</div></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--next prev button-->
+        <div class="arrows">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+
+
+        <!-- time running -->
+        <div class="timeRunning"></div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SpeedBenne. Tous droits réservés.</p>
+    </footer>
+    <script src="TailleDeBenneSupp/TailleDeBenneSupp.js"></script>
+</body>
+</html>

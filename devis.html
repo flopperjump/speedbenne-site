@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Speedbenne : Louez rapidement des bennes adaptées à vos besoins. Devis rapide et personnalisé pour tous types de projets.">
+    <meta name="keywords" content="location de bennes, devis bennes, Speedbenne, déchets, benne à déchets, bennes à gravats, grandes bennes, alsace">
+    <meta name="author" content="Speedbenne">
+    <meta property="og:title" content="Speedbenne - Location de bennes rapide et fiable">
+    <meta property="og:description" content="Obtenez votre devis personnalisé pour la location de bennes adaptées à vos besoins.">
+    <meta property="og:image" content="images/speedbenne.jpg">
+    <meta property="og:url" content="https://www.speedbenne.fr">
+    <title>Demande de Devis - Speedbenne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #1ABC9C;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --dark-bg: #34495E;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--light-gray);
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--dark-bg);
+            padding: 5px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a, nav img {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.1s;
+        }
+
+        nav a:hover, nav img:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        nav img {
+            width: 110px;
+            height: 60px;
+        }
+
+        nav .nav-phone a {
+            color: var(--white);
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        nav .nav-phone a:hover {
+            color: var(--accent-color);
+            text-shadow: 0px 2px 5px var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/strasbourgneige.png') no-repeat center/cover;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: textDrop 1.5s ease-out forwards;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: textDrop 1.5s ease-out 0.8s forwards;
+        }
+
+        @keyframes textDrop {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-container {
+            flex: 1;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            font-size: 2em;
+            color: var(--primary-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+
+        form label {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        form input, form select, form textarea, form button {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            padding: 12px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 5px var(--accent-color);
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        form button {
+            background: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        form button:hover {
+            transform: scale(1.05);
+            background: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .nav-links {
+                margin: 15px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            .form-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav img {
+                width: 90px;
+                height: 50px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="images/logospeedb.png" alt="Logo Speedbenne">
+        </a>
+        <div class="nav-links">
+            <a href="TailleDeBenne.html">Tailles de Bennes</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="nav-phone">
+            📞 <a href="tel:0614191291">06 14 19 12 91</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Demandez Votre Devis</h1>
+        <p>Une estimation rapide et personnalisée pour votre projet.</p>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Formulaire de Devis</h2>
+            <form action="submit-devis.php" method="POST">
+                <label for="name">Nom et prénom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+
+                <label for="city">Ville</label>
+                <input type="text" id="city" name="city" placeholder="Ville d'intervention" required>
+
+                <label for="size">Taille de la benne</label>
+                <select id="size" name="size" required>
+                    <option value="">Sélectionnez une taille</option>
+                    <option value="petite">Petite</option>
+                    <option value="moyenne">Moyenne</option>
+                    <option value="grande">Grande</option>
+                </select>
+
+                <label for="description">Description du projet</label>
+                <textarea id="description" name="description" placeholder="Décrivez brièvement votre projet" required></textarea>
+
+                <button type="submit">Envoyer la demande</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Speedbenne - Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
