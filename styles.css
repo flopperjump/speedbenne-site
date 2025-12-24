@@ -204,6 +204,274 @@ nav a:hover {
     background: linear-gradient(135deg, #0056b3, #007bff);
 }
 
+/* =========================
+   RESPONSIVE (à mettre en bas)
+   ========================= */
+
+/* Empêche les gros éléments de déborder */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  header {
+    padding: 20px 40px;
+  }
+
+  header .logo {
+    max-width: 240px;
+  }
+
+  .hero {
+    padding: 70px 20px 35px;
+    clip-path: none; /* plus safe sur mobile/tablette */
+  }
+
+  .hero h2 {
+    font-size: 2.4em;
+  }
+
+  .top-buttons {
+    gap: 60px;              /* réduit l'écart énorme */
+    margin-bottom: 30px;
+    padding: 10px 0;
+  }
+
+  .top-buttons button {
+    padding: 14px 24px;
+    font-size: 1.05em;
+  }
+
+  nav {
+    padding: 12px 10px;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 0.95em;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.5;
+  }
+
+  header {
+    padding: 18px 16px;
+  }
+
+  header .logo {
+    max-width: 200px;
+  }
+
+  /* Animation benne moins envahissante */
+  .benne-animation {
+    height: 40px;
+    bottom: 6px;
+  }
+
+  /* Nav : retour à la ligne propre */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 12px;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  .hero {
+    padding: 55px 16px 25px;
+    clip-path: none;
+    background-position: center;
+  }
+
+  .hero h2 {
+    font-size: 1.9em;
+  }
+
+  .hero h3,
+  .hero p {
+    font-size: 1.05em;
+  }
+
+  /* Boutons : en colonne */
+  .top-buttons {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 12px;
+    margin-bottom: 25px;
+    padding: 0 16px;
+  }
+
+  .top-buttons button {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px 18px;
+    font-size: 1.05em;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  header .logo {
+    max-width: 170px;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+  }
+
+  .hero h3,
+  .hero p {
+    font-size: 1em;
+  }
+
+  nav a {
+    font-size: 0.85em;
+    padding: 7px 9px;
+  }
+}
+
+/* =========================
+   NAV BURGER (mobile)
+   ========================= */
+
+nav {
+  position: sticky;
+}
+
+/* =========================
+   BURGER CLEAN & PRO
+   ========================= */
+
+.burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+}
+
+.burger span {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* placement parfait des traits */
+.burger span:nth-child(1) { top: 14px; }
+.burger span:nth-child(2) { top: 22px; }
+.burger span:nth-child(3) { top: 30px; }
+
+/* animation croix */
+nav.nav-open .burger span:nth-child(1) {
+  transform: translateX(-50%) translateY(8px) rotate(45deg);
+}
+nav.nav-open .burger span:nth-child(2) {
+  opacity: 0;
+}
+nav.nav-open .burger span:nth-child(3) {
+  transform: translateX(-50%) translateY(-8px) rotate(-45deg);
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Cache tout par défaut */
+  nav a,
+  nav .nav-phone {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Quand ouvert */
+  nav.nav-open a,
+  nav.nav-open .nav-phone {
+    display: block;
+  }
+
+  /* Tel un peu plus visible */
+  .nav-phone {
+    font-weight: 700;
+  }
+
+  /* Animation burger → croix */
+  nav.nav-open .burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  nav.nav-open .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.nav-open .burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* DESKTOP : rien ne change */
+@media (min-width: 769px) {
+  nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav a,
+  nav .nav-phone {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*glissière"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
 /* =========================
@@ -541,6 +809,196 @@ nav a:hover {
 }
 
 
+/* =========================
+   RESPONSIVE (à ajouter en bas)
+   ========================= */
+
+/* 1) SERVICES : meilleure grille sur petits écrans */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .card {
+    border-radius: 26px;
+  }
+
+  .service-card {
+    padding: 18px;
+  }
+
+  .service-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 36px 16px;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .service-card {
+    aspect-ratio: 4 / 5;
+    padding: 16px;
+    background-position: center;
+  }
+
+  .service-card:hover {
+    transform: none; /* hover inutile sur mobile */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .service-card__text {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services__grid {
+    grid-template-columns: 1fr; /* 1 colonne */
+    gap: 14px;
+  }
+
+  .card {
+    border-radius: 22px;
+  }
+
+  .service-card {
+    aspect-ratio: 16 / 11; /* carte plus “large” sur mobile, moins haute */
+    padding: 16px;
+  }
+
+  .service-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 1.35rem;
+  }
+}
+
+/* 2) TEXTE1 : passe en colonne sur mobile */
+@media (max-width: 900px) {
+  .texte1 {
+    padding: 32px 16px;
+    margin-bottom: 40px;
+  }
+
+  .texte1-content {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .texte {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .texte h2 {
+    font-size: 1.15em;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .texte p {
+    font-size: 0.95em; /* ton 0.7em est très petit sur mobile */
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .image img {
+    max-width: 520px;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .texte p {
+    font-size: 0.92em;
+  }
+
+  .texte span.highlight {
+    display: inline-block;
+    padding: 2px 8px;
+  }
+}
+
+/* 3) SEGMENTS : 3 -> 2 -> 1 colonnes + typo plus propre */
+@media (max-width: 1024px) {
+  .segment-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .segment-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .segment-content p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .segment-header h2 {
+    font-size: 1.6rem;
+    margin: 14px 10px;
+  }
+
+  .segment-header p {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+
+  .segment-container {
+    gap: 16px;
+  }
+
+  .segment-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .segment-content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benne-segments {
+    padding: 28px 14px;
+  }
+
+  .segment-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .segment-content p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -736,6 +1194,118 @@ nav a:hover {
   padding: 12px 10px;
 }
 
+/* =========================
+   RESPONSIVE ZONE SEARCH (à ajouter en bas)
+   ========================= */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .zone-search {
+    padding: 2.5rem 1rem;
+  }
+
+  .zone-search .cards-container {
+    gap: 16px;
+  }
+
+  .zone-search .zone-card {
+    width: 180px;
+    height: 245px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .zone-search {
+    padding: 2.2rem 14px;
+  }
+
+  .zone-search .zones-header h2 {
+    font-size: 1.35rem;
+  }
+
+  /* Input + bouton en colonne si besoin */
+  .zone-search .search-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .zone-search #city-search {
+    width: 100%;
+    max-width: 520px;
+    font-size: 1rem;
+    padding: 0.75rem 0.95rem;
+  }
+
+  .zone-search #search-button {
+    width: 100%;
+    max-width: 520px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Cartes : grille plus stable */
+  .zone-search .cards-container {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .zone-search .zone-card {
+    width: min(46vw, 190px); /* 2 colonnes la plupart du temps */
+    height: 210px;
+    font-size: 16px;
+  }
+
+  /* Sur mobile, pas de hover (sinon ça reste bloqué) */
+  .zone-search .zone-card:hover {
+    transform: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+    background: var(--white);
+    border-color: rgba(56, 142, 60, 0.25);
+  }
+
+  /* Quand la carte est ouverte (via .is-open) : c’est ça qui remplace le hover */
+  .zone-search .zone-card.is-open {
+    border-color: var(--primary-color);
+    background: var(--light-bg);
+    box-shadow:
+      0 0 12px rgba(76, 175, 80, 0.25),
+      0 10px 28px rgba(0, 0, 0, 0.16);
+  }
+}
+
+/* Très petit mobile : 1 colonne */
+@media (max-width: 420px) {
+  .zone-search .zone-card {
+    width: 100%;
+    max-width: 520px;
+    height: 210px;
+  }
+
+  .zone-search .cards-container {
+    gap: 12px;
+  }
+}
+
+/* Bonus: appareils tactiles -> désactive le hover partout */
+@media (hover: none) {
+  .zone-search .zone-card:hover {
+    transform: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+    background: var(--white);
+    border-color: rgba(56, 142, 60, 0.25);
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -833,4 +1403,97 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 10px;
+}
+
+/* =========================
+   RESPONSIVE SERVICES (ancienne section) + QUOTE + FOOTER
+   ========================= */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .services {
+    padding: 60px 16px;
+  }
+
+  .services h2 {
+    font-size: 2.1em;
+    margin-bottom: 22px;
+  }
+
+  .service-item {
+    width: 46%;          /* 2 colonnes */
+    margin: 10px;
+    padding: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services {
+    padding: 50px 14px;
+  }
+
+  .services h2 {
+    font-size: 1.8em;
+    margin-bottom: 18px;
+  }
+
+  .service-item {
+    width: 100%;         /* 1 colonne */
+    max-width: 520px;    /* joli au centre */
+    margin: 10px auto;
+    padding: 22px;
+    display: block;      /* remplace inline-block */
+  }
+
+  /* Hover inutile sur mobile */
+  .service-item:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.687);
+  }
+
+  .services span.highlight5,
+  .services span.highlight6 {
+    display: inline-block;
+    padding: 2px 8px;
+  }
+
+  .quote {
+    padding: 45px 14px;
+  }
+
+  .quote form {
+    max-width: 520px;
+  }
+
+  .quote form input,
+  .quote form select,
+  .quote form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  .services h2 {
+    font-size: 1.55em;
+  }
+
+  .service-item {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  footer {
+    padding: 12px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Bonus : appareils tactiles -> pas de hover */
+@media (hover: none) {
+  .service-item:hover {
+    transform: none;
+  }
 }
