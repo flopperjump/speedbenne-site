@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header section */
+
+header{
+    width: 100%; 
+    max-width: 100%;
+    padding-left: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+header nav a{
+    color: #fff;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+a.active{
+    background: #14ff72cb;
+    border-radius: 2px;
+}
+
+a:hover{
+    background: #14ff72cb;
+    border-radius: 2px;
+}
+
+/* Header section */
+
+.des span.highlight {
+    background-color: #e6e201; /* Une couleur de surbrillance douce */
+    color: #000000; /* Texte foncé pour le contraste */
+    padding: 0 8px; /* Réduit le padding pour rendre le texte plus compact */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); /* Ombre légère pour un effet de lumière subtil */
+    transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+/* carousel */
+
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item{
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 70%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+}
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .list .item:nth-child(3){
+    left: 67%;
+}
+
+.carousel .list .item:nth-child(4){
+    left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(5){
+    left: calc(67% + 400px);
+}
+
+.carousel .list .item:nth-child(6){
+    left: calc(67% + 600px);
+}
+
+.carousel .list .item:nth-child(n+7){
+    left: calc(67% + 800px);
+    opacity: 0;
+}
+
+
+
+
+
+.list .item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: #000000;
+    display: none;
+}
+
+.list .item:nth-child(2) .content{
+    display: block;
+}
+
+.content .title{
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #14ff72cb;
+    font-weight: bold;
+    line-height: 1;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content .name{
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.8);
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    margin-left: 5px;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+
+.content .btn{
+    margin-left: 5px;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+
+.content .btn button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #fff;
+}
+
+.content .btn button:nth-child(1){
+    margin-right: 15px;
+}
+
+.content .btn button:nth-child(2){
+    background: transparent;
+    color: #14ff72cb;
+    border: 2px solid #fff;
+    transition: 0.3s;
+}
+
+.content .btn button:nth-child(2):hover{
+    background-color: #14ff72cb;
+    color: #fff;
+    border-color: #14ff72cb;
+}
+
+
+@keyframes animate {
+    
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+/* Carousel */
+
+
+
+
+
+
+/* next prev arrows */
+
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #14ff72cb;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.arrows button:hover{
+    background: #fff;
+    color: #000;
+}
+
+
+/* time running */
+.carousel .timeRunning{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 4px;
+    background-color: #14ff72cb;
+    left: 0;
+    top: 0;
+    animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+    
+    from{width: 0%;}
+    to{width: 100%;}
+
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 999px){
+    
+    header{
+        padding-left: 50px;
+    }
+
+    .list .item .content{
+        left: 50px;
+    }
+
+    .content .title, .content .name{
+        font-size: 70px;
+    }
+
+    .content .des{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 690px){
+    header nav a{
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .list .item .content{
+        top: 40%;
+    }
+
+    .content .title, .content .name{
+        font-size: 45px;
+    }
+
+    .content .btn button{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+footer {
+    background-color: #222; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    padding: 20px 0; /* Espacement vertical */
+    position: relative; /* Permet de positionner le footer correctement */
+    bottom: 0; /* S'assure que le footer est en bas */
+    width: 100%; /* Prend toute la largeur */
+}
+
+footer p {
+    margin: 0; /* Supprime les marges */
+    font-size: 14px; /* Taille du texte */
+}
+
+
+
+
+/*MODIFICATION POUR AM2LIORER LE RESPONSIVE*/
+/* =========================================================
+   MOBILE UX FIX – TEXTES CENTRÉS + SLIDER CLEAN
+========================================================= */
+@media screen and (max-width: 600px) {
+
+  /* Header compact */
+  header{
+    padding-left: 12px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  header nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  header nav a{
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* Texte du slide : centré + largeur fluide */
+  .list .item .content{
+    display: block;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 520px);
+    text-align: center;
+    padding: 14px;
+  }
+
+  /* Fond glass pour la lisibilité */
+  .list .item:nth-child(2) .content{
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Tailles de texte fluides */
+  .content .title{
+    font-size: clamp(22px, 7vw, 34px);
+    line-height: 1.1;
+  }
+
+  .content .name{
+    font-size: clamp(22px, 7vw, 34px);
+    line-height: 1.1;
+  }
+
+  .content .des{
+    font-size: clamp(13px, 3.8vw, 15px);
+    margin: 10px 0 14px;
+  }
+
+  /* Boutons centrés */
+  .content .btn{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .content .btn button{
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* =====================================
+     SUPPRESSION DES MINI-CARDS SUR MOBILE
+  ====================================== */
+  .carousel .list .item:nth-child(n+3){
+    display: none;
+  }
+
+  /* Flèches repositionnées */
+  .arrows{
+    top: 88%;
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+    max-width: none;
+    gap: 12px;
+  }
+
+  .arrows button{
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE COMPLET – CAROUSEL + HEADER + ARROWS
+   (à mettre tout en bas)
+========================================================= */
+
+/* 0) Sécurité overflow sur petits écrans */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   TABLETTE LARGE (<= 1024px)
+========================= */
+@media screen and (max-width: 1024px) {
+  header {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  header nav a {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+
+  .list .item .content {
+    left: 24px;
+    width: min(520px, 78vw);
+  }
+
+  .content .title,
+  .content .name {
+    font-size: 54px;
+  }
+
+  .content .des {
+    font-size: 15px;
+  }
+
+  /* Mini-cards un peu plus proches */
+  .carousel .list .item {
+    width: 160px;
+    height: 230px;
+    top: 82%;
+    left: 66%;
+    transform: translateY(-70%);
+  }
+  .carousel .list .item:nth-child(3) { left: 64%; }
+  .carousel .list .item:nth-child(4) { left: calc(64% + 180px); }
+  .carousel .list .item:nth-child(5) { left: calc(64% + 360px); }
+  .carousel .list .item:nth-child(6) { left: calc(64% + 540px); }
+  .carousel .list .item:nth-child(n+7) { left: calc(64% + 720px); opacity: 0; }
+
+  .arrows {
+    top: 84%;
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* =========================
+   TABLETTE (<= 768px)
+========================= */
+@media screen and (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  header nav a {
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .carousel {
+    height: 92vh;
+  }
+
+  .list .item .content {
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 560px);
+    text-align: center;
+    padding: 14px;
+    display: block;
+  }
+
+  /* Lisibilité sur l'image */
+  .list .item:nth-child(2) .content {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .content .title,
+  .content .name {
+    font-size: clamp(26px, 6vw, 44px);
+    line-height: 1.1;
+  }
+
+  .content .des {
+    font-size: clamp(13px, 2.6vw, 15px);
+    margin: 10px 0 14px;
+  }
+
+  .content .btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  .content .btn button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* Mini-cards : on en garde 2 max pour pas gêner */
+  .carousel .list .item:nth-child(n+5) {
+    display: none;
+  }
+
+  .carousel .list .item:nth-child(3) {
+    left: 70%;
+  }
+
+  .carousel .list .item:nth-child(4) {
+    left: calc(70% + 170px);
+  }
+
+  .arrows {
+    top: 88%;
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+    gap: 12px;
+  }
+
+  .arrows button {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   MOBILE (<= 600px)
+========================= */
+@media screen and (max-width: 600px) {
+  header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  header nav a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .carousel {
+    height: 92vh;
+    margin-top: -50px;
+  }
+
+  /* On supprime toutes les mini-cards */
+  .carousel .list .item:nth-child(n+3) {
+    display: none;
+  }
+
+  .list .item .content {
+    top: 58%;
+    width: min(92vw, 520px);
+    padding: 14px;
+  }
+
+  .content .title,
+  .content .name {
+    font-size: clamp(22px, 7vw, 34px);
+  }
+
+  .content .des {
+    font-size: clamp(13px, 3.8vw, 15px);
+  }
+
+  .arrows {
+    top: 90%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .arrows button {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   TRÈS PETIT MOBILE (<= 420px)
+========================= */
+@media screen and (max-width: 420px) {
+  header nav {
+    gap: 6px;
+  }
+
+  header nav a {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .list .item .content {
+    top: 60%;
+    padding: 12px;
+  }
+
+  .content .btn button {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   BONUS : appareils tactiles (hover désactivé)
+========================= */
+@media (hover: none) {
+  a:hover {
+    background: none;
+  }
+}
