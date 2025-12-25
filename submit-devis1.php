@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $mail->Host = 'smtp.gmail.com'; // Serveur SMTP de Gmail
        $mail->SMTPAuth = true;
        $mail->Username = 'speedbennes@gmail.com'; // Ton adresse email Gmail
-       $mail->Password = 'ssij ysag kglx srfx'; // Ton mot de passe d'application Gmail
+       $mail->Password = 'rjov rrdl ncie dbqp'; // Ton mot de passe d'application Gmail
        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Utiliser STARTTLS pour sécuriser la connexion
        $mail->Port = 587; // Port (587 pour STARTTLS, 465 pour SMTPS)
 
