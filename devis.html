@@ -1,477 +1,955 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Speedbenne : Louez rapidement des bennes adaptées à vos besoins. Devis rapide et personnalisé pour tous types de projets.">
-    <meta name="keywords" content="location de bennes, devis bennes, Speedbenne, déchets, benne à déchets, bennes à gravats, grandes bennes, alsace">
-    <meta name="author" content="Speedbenne">
-    <meta property="og:title" content="Speedbenne - Location de bennes rapide et fiable">
-    <meta property="og:description" content="Obtenez votre devis personnalisé pour la location de bennes adaptées à vos besoins.">
-    <meta property="og:image" content="images/speedbenne.jpg">
-    <meta property="og:url" content="https://www.speedbenne.fr">
-    <title>Demande de Devis - Speedbenne</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2C3E50;
-            --secondary-color: #E74C3C;
-            --accent-color: #1ABC9C;
-            --white: #FFFFFF;
-            --light-gray: #F8F9FA;
-            --dark-bg: #34495E;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--light-gray);
-            color: var(--primary-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--dark-bg);
-            padding: 5px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a, nav img {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.3s, transform 0.1s;
-        }
-
-        nav a:hover, nav img:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-            cursor: pointer;
-        }
-
-        nav img {
-            width: 110px;
-            height: 60px;
-        }
-
-        nav .nav-phone a {
-            color: var(--white);
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        nav .nav-phone a:hover {
-            color: var(--accent-color);
-            text-shadow: 0px 2px 5px var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        header {
-            position: relative;
-            text-align: center;
-            color: var(--white);
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/strasbourgneige.png') no-repeat center/cover;
-            padding: 30px 20px;
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: textDrop 1.5s ease-out forwards;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 15px;
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: textDrop 1.5s ease-out 0.8s forwards;
-        }
-
-        @keyframes textDrop {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            display: flex;
-            gap: 30px;
-            padding: 0 20px;
-            flex-wrap: wrap;
-        }
-
-        .form-container {
-            flex: 1;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px var(--shadow-color);
-        }
-
-        .form-container h2 {
-            margin-top: 0;
-            font-size: 2em;
-            color: var(--primary-color);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background-color: var(--light-gray);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px var(--shadow-color);
-        }
-
-        form label {
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        form input, form select, form textarea, form button {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1em;
-            padding: 12px;
-            border: 1px solid var(--primary-color);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        form input:focus, form select:focus, form textarea:focus {
-            border-color: var(--accent-color);
-            outline: none;
-            box-shadow: 0 0 5px var(--accent-color);
-        }
-
-        form textarea {
-            resize: vertical;
-            height: 120px;
-        }
-
-        form button {
-            background: var(--secondary-color);
-            color: var(--white);
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
-
-        form button:hover {
-            transform: scale(1.05);
-            background: var(--accent-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav .nav-links {
-                margin: 15px 0;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            main {
-                flex-direction: column;
-            }
-
-            .form-container {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            nav img {
-                width: 90px;
-                height: 50px;
-            }
-
-            .form-container {
-                padding: 20px;
-            }
-        }
-
-        /* =========================
-   RESPONSIVE PRO (à ajouter en bas)
-   ========================= */
-
-/* éviter les débordements horizontaux */
-html, body { overflow-x: hidden; }
-* { max-width: 100%; }
-
-/* NAV : meilleur comportement global */
-nav {
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.nav-links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Tablette */
-@media (max-width: 1024px) {
-  main {
-    margin: 28px auto;
-    gap: 22px;
-    padding: 0 16px;
-  }
-
-  .form-container {
-    padding: 28px;
-  }
-
-  form {
-    padding: 22px;
-  }
-
-  header h1 {
-    font-size: 2.2em;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 14px;
-  }
-
-  nav a {
-    margin: 0 8px;
-  }
-
-  nav img {
-    width: 95px;
-    height: auto;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 10px 12px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.06);
-  }
-
-  .nav-phone {
-    margin-top: 6px;
-  }
-
-  header {
-    padding: 26px 14px;
-  }
-
-  header h1 {
-    font-size: clamp(1.5em, 6vw, 2.1em);
-    letter-spacing: 1.5px;
-  }
-
-  header p {
-    font-size: 1.02em;
-  }
-
-  main {
-    margin: 18px auto;
-    padding: 0 14px;
-  }
-
-  .form-container {
-    padding: 18px;
-    border-radius: 14px;
-  }
-
-  .form-container h2 {
-    font-size: 1.5em;
-  }
-
-  form {
-    padding: 16px;
-    border-radius: 14px;
-    gap: 14px;
-  }
-
-  form label {
-    font-size: 1em;
-  }
-
-  form input,
-  form select,
-  form textarea,
-  form button {
-    font-size: 1rem;
-    padding: 12px 12px;
-    border-radius: 10px;
-  }
-
-  form textarea {
-    height: 140px;
-  }
-
-  /* hover inutile sur mobile */
-  form button:hover {
-    transform: none;
-  }
-}
-
-/* Très petit mobile */
-@media (max-width: 480px) {
-  nav {
-    padding: 10px 12px;
-  }
-
-  .nav-links a {
-    width: 100%;
-    text-align: center;
-  }
-
-  header h1 {
-    font-size: 1.45em;
-  }
-
-  header p {
-    font-size: 0.98em;
-  }
-
-  .form-container {
-    padding: 14px;
-  }
-
-  form {
-    padding: 14px;
-  }
-
-  footer p {
-    font-size: 0.95em;
-  }
-}
-
-/* iOS notch / safe area (évite les décalages) */
-@supports (padding: max(0px)) {
-  nav {
-    padding-top: calc(5px + env(safe-area-inset-top));
-  }
-  body {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Devis Location de Benne | SpeedBenne</title>
+  <meta name="description" content="Demandez un devis premium pour la location de benne (3 à 30 m³) : gravats, déchets verts, encombrants. Livraison rapide en Alsace / Bas-Rhin / Haut-Rhin." />
+  <meta name="keywords" content="devis benne, location benne, devis location benne, benne gravats, benne déchets verts, SpeedBenne, Alsace, Bas-Rhin, Haut-Rhin" />
+  <meta name="author" content="SpeedBenne" />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Devis - SpeedBenne" />
+  <meta property="og:description" content="Demandez votre devis personnalisé pour une location de benne rapide et fiable." />
+  <meta property="og:image" content="images/speedbenne.jpg" />
+  <meta property="og:url" content="https://www.speedbenne.fr/devis.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Palette SpeedBenne */
+      --primary:#4CAF50;
+      --secondary:#388E3C;
+      --accent:#8BC34A;
+      --dark:#263238;
+      --light:#F1F8E9;
+      --text:#37474F;
+      --white:#ffffff;
+
+      --container: 1120px;
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+
+      --shadow: 0 18px 45px rgba(0,0,0,.18);
+      --shadow-soft: 0 12px 26px rgba(0,0,0,.12);
+      --ring: 0 0 0 4px rgba(76,175,80,.18);
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html, body{ max-width:100%; overflow-x:hidden; }
+    body{
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none; }
+
+    .wrap{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* =========================
+       Top Brand Header
+    ========================= */
+    header{
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 18px 16px;
+      text-align:center;
+      position: relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      left:-20%;
+      right:-20%;
+      bottom:-28px;
+      height: 80px;
+      background: rgba(255,255,255,.08);
+      transform: rotate(-2deg);
+    }
+    .brand{
+      max-width: var(--container);
+      margin: 0 auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      z-index:1;
+      gap: 14px;
+    }
+    .logo{
+      width: 220px;
+      height:auto;
+      transition: transform .25s ease;
+    }
+    .logo:hover{ transform: scale(1.03); }
+
+    /* =========================
+       NAV (burger)
+    ========================= */
+    nav{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+
+      background: rgba(38,50,56,.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    nav > a{
+      color: var(--white);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: .95rem;
+
+      padding: 10px 12px;
+      border-radius: 999px;
+
+      transition: background .2s ease, transform .12s ease;
+    }
+    nav > a:hover{
+      background: rgba(139,195,74,.18);
+      transform: translateY(-1px);
+    }
+
+    nav > a.active{
+      background: rgba(76,175,80,.25);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .nav-phone{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap:8px;
+
+      color: var(--white);
+      font-weight: 900;
+
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      transition: background .2s ease, border-color .2s ease, transform .12s ease;
+    }
+    .nav-phone a{ color: var(--white); font-weight: 900; }
+    .nav-phone:hover{
+      border-color: rgba(139,195,74,.35);
+      background: rgba(139,195,74,.12);
+      transform: translateY(-1px);
+    }
+
+    /* Burger */
+    nav .burger{
+      display:none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      cursor:pointer;
+
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+
+      position: relative;
+      flex: 0 0 auto;
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    nav .burger:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(0,0,0,.30);
+    }
+    nav .burger span{
+      position:absolute;
+      left:50%;
+      width:18px;
+      height:2px;
+      background:#fff;
+      border-radius:999px;
+      transform: translateX(-50%);
+      transition: top .2s ease, transform .2s ease, opacity .2s ease;
+    }
+    nav .burger span:nth-child(1){ top:16px; }
+    nav .burger span:nth-child(2){ top:21px; opacity:.95; }
+    nav .burger span:nth-child(3){ top:26px; }
+
+    nav .burger.is-open span:nth-child(1){
+      top:21px; transform: translateX(-50%) rotate(45deg);
+    }
+    nav .burger.is-open span:nth-child(2){ opacity:0; }
+    nav .burger.is-open span:nth-child(3){
+      top:21px; transform: translateX(-50%) rotate(-45deg);
+    }
+
+    nav.is-open{ border-bottom:none; }
+    nav.is-open::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-1px;
+      height:1px;
+      background: rgba(255,255,255,.08);
+    }
+
+    @media (max-width: 860px){
+      nav{ justify-content: space-between; padding: 10px 12px; }
+      nav .burger{ display:inline-flex; align-items:center; justify-content:center; }
+      nav > a, nav .nav-phone{ display:none; }
+
+      nav.is-open{
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items:stretch;
+        gap:10px;
+        padding-bottom:12px;
+      }
+      nav.is-open > a{
+        display:block;
+        width:100%;
+        padding:12px 12px;
+        border-radius:14px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.10);
+      }
+      nav.is-open .nav-phone{
+        display:flex;
+        width:100%;
+        justify-content:center;
+        padding:12px 12px;
+        border-radius:14px;
+      }
+    }
+
+    /* =========================
+       Premium Hero
+    ========================= */
+    .hero{
+      padding: 56px 0 26px;
+      background:
+        radial-gradient(1200px 520px at 18% 0%, rgba(76,175,80,.25), transparent 55%),
+        radial-gradient(900px 420px at 85% 10%, rgba(139,195,74,.18), transparent 60%),
+        linear-gradient(180deg, rgba(241,248,233,.95), rgba(255,255,255,1));
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(56,142,60,.10);
+      border: 1px solid rgba(56,142,60,.18);
+      color: #1f5f2a;
+      font-weight: 800;
+      font-size: .92rem;
+      width: fit-content;
+    }
+
+    .hero h1{
+      font-size: clamp(1.9rem, 3.2vw, 3.1rem);
+      line-height: 1.05;
+      margin: 14px 0 10px;
+      color:#153a1a;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p{
+      margin-top: 8px;
+      max-width: 62ch;
+      color: rgba(55,71,79,.95);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+      align-items:center;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1rem;
+
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      box-shadow: 0 12px 28px rgba(0,0,0,.14);
+      white-space: nowrap;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color:#fff;
+    }
+    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(0,0,0,.18); }
+
+    .btn-ghost{
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(56,142,60,.25);
+      color: #1f5f2a;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+    }
+    .btn-ghost:hover{ transform: translateY(-1px); border-color: rgba(56,142,60,.45); }
+
+    .trust{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(56,142,60,.16);
+      box-shadow: 0 10px 20px rgba(0,0,0,.06);
+      font-weight: 800;
+      color:#1f5f2a;
+      font-size: .92rem;
+    }
+
+    /* Right Premium Card */
+    .side-card{
+      background:#fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(56,142,60,.14);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .side-card::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background: radial-gradient(600px 200px at 20% 0%, rgba(76,175,80,.20), transparent 60%);
+      pointer-events:none;
+    }
+
+    .side-card .cover{
+      height: 190px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.34)),
+        url("images/locbenne.jpg") center/cover no-repeat;
+    }
+
+    .side-card .content{
+      padding: 16px 16px 18px;
+      position:relative;
+    }
+
+    .side-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .kpi .box{
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(241,248,233,.85);
+      border: 1px solid rgba(56,142,60,.16);
+    }
+    .kpi .label{
+      font-size: .85rem;
+      opacity:.9;
+      font-weight: 700;
+    }
+    .kpi .value{
+      font-weight: 900;
+      color:#153a1a;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .side-card .cover{ height: 170px; }
+    }
+
+    /* =========================
+       Premium Form Section
+    ========================= */
+    .form-section{
+      padding: 22px 0 46px;
+      background:
+        radial-gradient(900px 260px at 10% 30%, rgba(76,175,80,.10), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,1), rgba(241,248,233,.35));
+    }
+
+    .form-shell{
+      display:grid;
+      grid-template-columns: .38fr .62fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* Stepper card */
+    .steps-card{
+      background:#fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(56,142,60,.14);
+      overflow:hidden;
+      position: sticky;
+      top: 86px;
+    }
+
+    .steps-head{
+      padding: 16px 16px 12px;
+      background: linear-gradient(135deg, rgba(76,175,80,.12), rgba(56,142,60,.06));
+      border-bottom: 1px solid rgba(56,142,60,.12);
+    }
+    .steps-head h2{
+      margin:0;
+      color:#153a1a;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+    .steps-head p{
+      margin-top: 6px;
+      font-size: .95rem;
+      opacity:.92;
+    }
+
+    .steps-list{
+      padding: 14px 16px 16px;
+      display:grid;
+      gap: 12px;
+    }
+
+    .step{
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(241,248,233,.85);
+      border: 1px solid rgba(56,142,60,.14);
+    }
+
+    .step .num{
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+      flex: 0 0 auto;
+    }
+
+    .step b{ color:#153a1a; }
+    .step .muted{ font-size: .93rem; opacity:.92; margin-top: 2px; }
+
+    .suggest{
+      margin-top: 2px;
+      font-size: .92rem;
+      opacity: .92;
+    }
+    .suggest strong{ color:#153a1a; }
+
+    /* Form card */
+    .form-card{
+      background:#fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(56,142,60,.14);
+      overflow:hidden;
+    }
+
+    .form-head{
+      padding: 18px 18px 14px;
+      background: linear-gradient(135deg, rgba(76,175,80,.12), rgba(56,142,60,.06));
+      border-bottom: 1px solid rgba(56,142,60,.12);
+    }
+
+    .form-head h2{
+      margin:0;
+      color:#153a1a;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .form-head p{
+      margin-top: 6px;
+      color: rgba(55,71,79,.95);
+      max-width: 80ch;
+    }
+
+    form{
+      padding: 18px;
+      display:grid;
+      gap: 14px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label{
+      font-weight: 800;
+      font-size: .95rem;
+      color:#153a1a;
+      display:block;
+      margin-bottom: 6px;
+    }
+
+    .field{
+      position: relative;
+    }
+
+    input, select, textarea{
+      width:100%;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(38,50,56,.20);
+      background: rgba(241,248,233,.55);
+      transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(56,142,60,.55);
+      box-shadow: var(--ring);
+      background: #fff;
+    }
+
+    textarea{
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Small helper under textarea */
+    .helper{
+      font-size: .9rem;
+      opacity: .88;
+      margin-top: 6px;
+    }
+
+    .form-actions{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      justify-content:flex-start;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .submit{
+      border:none;
+      cursor:pointer;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1rem;
+      color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 12px 28px rgba(0,0,0,.14);
+      transition: transform .15s ease, box-shadow .2s ease;
+      white-space: nowrap;
+    }
+    .submit:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(0,0,0,.18);
+    }
+
+    .call{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(56,142,60,.25);
+      color:#1f5f2a;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      transition: transform .15s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+    .call:hover{ transform: translateY(-1px); border-color: rgba(56,142,60,.45); }
+
+    .hint{
+      font-size: .92rem;
+      opacity: .9;
+    }
+
+    /* Suggestion badge (JS) */
+    .suggestion{
+      display:none;
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(241,248,233,.92);
+      border: 1px solid rgba(56,142,60,.18);
+      box-shadow: 0 12px 26px rgba(0,0,0,.08);
+    }
+    .suggestion strong{ color:#153a1a; }
+
+    /* Responsive Form Shell */
+    @media (max-width: 980px){
+      .form-shell{ grid-template-columns: 1fr; }
+      .steps-card{ position: relative; top:auto; }
+    }
+    @media (max-width: 760px){
+      .grid-2{ grid-template-columns: 1fr; }
+      form{ padding: 16px; }
+      .form-head{ padding: 16px; }
+    }
+
+    /* =========================
+       Footer
+    ========================= */
+    footer{
+      background: var(--dark);
+      color:#fff;
+      padding: 22px 0;
+    }
+    footer .mini{
+      opacity:.9;
+      font-size:.95rem;
+      text-align:center;
+    }
+    footer a{ color:#fff; text-decoration:underline; text-underline-offset: 3px; }
+
+    /* iPhone safe area */
+    @supports (padding: max(0px)){
+      nav{ padding-top: calc(10px + env(safe-area-inset-top)); }
+      body{ padding-bottom: env(safe-area-inset-bottom); }
+    }
+  </style>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">
-            <img src="images/logospeedb.png" alt="Logo Speedbenne">
-        </a>
-        <div class="nav-links">
-            <a href="TailleDeBenne.html">Tailles de Bennes</a>
-            <a href="services.html">Services</a>
-            <a href="blog.html">Blog</a>
+
+  <header>
+    <div class="brand">
+      <a href="index.html" aria-label="Retour à l'accueil SpeedBenne">
+        <img class="logo" src="images/logospeedb.png" alt="Logo SpeedBenne">
+      </a>
+    </div>
+  </header>
+
+  <nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" type="button">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="index.html">Accueil</a>
+    <a href="TailleDeBenne.html">Tailles de Bennes</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a class="active" href="devis.html">Devis</a>
+
+    <div class="nav-phone">
+      📞 <a href="tel:0614191291">06 14 19 12 91</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">✨ Devis premium • Simple • Rapide</div>
+        <h1>Un devis clair, une livraison rapide, zéro prise de tête.</h1>
+        <p>
+          Donnez-nous les infos essentielles : <strong>ville</strong>, <strong>type de déchets</strong>, <strong>volume</strong>.
+          On vous répond avec une proposition adaptée (taille, durée, organisation).
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#form">📝 Demander un devis</a>
+          <a class="btn btn-ghost" href="tel:0614191291">📞 Appeler (06 14 19 12 91)</a>
         </div>
-        <div class="nav-phone">
-            📞 <a href="tel:0614191291">06 14 19 12 91</a>
+
+        <div class="trust" aria-label="Garanties">
+          <span class="chip">⏱️ Réponse rapide</span>
+          <span class="chip">♻️ Tri & valorisation</span>
+          <span class="chip">✅ Pro & particuliers</span>
+          <span class="chip">📦 3 à 30 m³</span>
         </div>
-    </nav>
+      </div>
 
-    <header>
-        <h1>Demandez Votre Devis</h1>
-        <p>Une estimation rapide et personnalisée pour votre projet.</p>
-    </header>
+      <aside class="side-card" aria-label="Infos">
+        <div class="cover" role="img" aria-label="Benne SpeedBenne"></div>
+        <div class="content">
+          <div class="side-title">
+            <strong style="color:#153a1a;">Infos rapides</strong>
+            <span style="font-weight:900; color:#1f5f2a;">SpeedBenne</span>
+          </div>
+          <p style="margin-top:8px; opacity:.94;">
+            Petite rénovation, gros chantier, déchets verts ou gravats : on vous guide vers la taille la plus rentable.
+          </p>
 
-    <main>
-        <div class="form-container">
-            <h2>Formulaire de Devis</h2>
-            <form action="submit-devis.php" method="POST">
-                <label for="name">Nom et prénom</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-                <label for="phone">Téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
-
-                <label for="city">Ville</label>
-                <input type="text" id="city" name="city" placeholder="Ville d'intervention" required>
-
-                <label for="size">Taille de la benne</label>
-                <select id="size" name="size" required>
-                    <option value="">Sélectionnez une taille</option>
-                    <option value="petite">Petite</option>
-                    <option value="moyenne">Moyenne</option>
-                    <option value="grande">Grande</option>
-                </select>
-
-                <label for="description">Description du projet</label>
-                <textarea id="description" name="description" placeholder="Décrivez brièvement votre projet" required></textarea>
-
-                <button type="submit">Envoyer la demande</button>
-            </form>
+          <div class="kpi">
+            <div class="box">
+              <div class="label">Tailles</div>
+              <div class="value">3 → 30 m³</div>
+            </div>
+            <div class="box">
+              <div class="label">Secteur</div>
+              <div class="value">Alsace / Grand Est</div>
+            </div>
+            <div class="box">
+              <div class="label">Téléphone</div>
+              <div class="value">06 14 19 12 91</div>
+            </div>
+            <div class="box">
+              <div class="label">Déchets</div>
+              <div class="value">Gravats / Verts / Mixte</div>
+            </div>
+          </div>
         </div>
-    </main>
+      </aside>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 Speedbenne - Tous droits réservés.</p>
-    </footer>
+  <!-- FORM -->
+  <section class="form-section" id="form">
+    <div class="wrap form-shell">
+
+      <!-- STEPPER -->
+      <aside class="steps-card">
+        <div class="steps-head">
+          <h2>Votre demande en 3 étapes</h2>
+          <p>Ultra simple : on vous répond avec une proposition claire.</p>
+        </div>
+
+        <div class="steps-list">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Vos coordonnées</b>
+              <div class="muted">Nom, email, téléphone (pour vous rappeler).</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Ville + benne</b>
+              <div class="muted">Ville d’intervention + taille estimée.</div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Votre projet</b>
+              <div class="muted">Type de déchets, accès, contraintes, urgence.</div>
+            </div>
+          </div>
+
+          <div class="suggest">
+            💡 <strong>Astuce :</strong> plus la description est précise, plus le devis est juste (et souvent moins cher).
+          </div>
+        </div>
+      </aside>
+
+      <!-- FORM CARD -->
+      <div class="form-card">
+        <div class="form-head">
+          <h2>Formulaire de devis</h2>
+        </div>
+
+        <!-- IMPORTANT : on garde action + names pour PHPMailer -->
+        <form action="submit-devis.php" method="POST">
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Nom et prénom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+            </div>
+
+            <div class="field">
+              <label for="city">Ville</label>
+              <input type="text" id="city" name="city" placeholder="Ville d'intervention" required>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="size">Taille de la benne</label>
+              <select id="size" name="size" required>
+                <option value="">Sélectionnez une taille</option>
+                <option value="petite">Petite</option>
+                <option value="moyenne">Moyenne</option>
+                <option value="grande">Grande</option>
+              </select>
+
+              <div class="suggestion" id="sizeSuggestion" aria-live="polite"></div>
+            </div>
+
+            <div class="field">
+              <label for="description">Description du projet</label>
+              <textarea id="description" name="description" placeholder="Ex : gravats de salle de bain, accès cour, besoin 3 jours, rue étroite..." required></textarea>
+              <div class="helper">🎯 Indiquez : type de déchets (gravats/verts/mixte), accès, durée, urgence.</div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="submit" type="submit">✅ Envoyer la demande</button>
+            <a class="call" href="tel:0614191291">📞 Appeler : 06 14 19 12 91</a>
+            <span class="hint">🔒 Vos infos restent confidentielles</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="mini">
+        © 2024 SpeedBenne — Tous droits réservés • <a href="mentionslégales.html">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu
+    document.addEventListener("DOMContentLoaded", () => {
+      const nav = document.querySelector("nav");
+      const burger = document.querySelector("nav .burger");
+      if (!nav || !burger) return;
+
+      const setOpen = (open) => {
+        nav.classList.toggle("is-open", open);
+        burger.classList.toggle("is-open", open);
+        burger.setAttribute("aria-expanded", String(open));
+      };
+
+      burger.addEventListener("click", () => {
+        setOpen(!nav.classList.contains("is-open"));
+      });
+
+      nav.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => setOpen(false));
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 860) setOpen(false);
+      });
+    });
+
+    // Mini suggestion de taille (pure aide UX, ne change rien au PHP)
+    // - si description contient des indices => propose une taille
+    document.addEventListener("DOMContentLoaded", () => {
+      const desc = document.getElementById("description");
+      const size = document.getElementById("size");
+      const box = document.getElementById("sizeSuggestion");
+      if (!desc || !size || !box) return;
+
+      const suggest = () => {
+        const t = (desc.value || "").toLowerCase();
+
+        // Heuristiques simples (tu peux ajuster)
+        const mentionsBig =
+          t.includes("maison") || t.includes("toiture") || t.includes("démolition") || t.includes("demolition") ||
+          t.includes("chantier") || t.includes("béton") || t.includes("beton") || t.includes("gros") ||
+          t.includes("curage") || t.includes("volume") || t.includes("beaucoup");
+
+        const mentionsSmall =
+          t.includes("jardin") || t.includes("verts") || t.includes("déchets verts") || t.includes("dechets verts") ||
+          t.includes("petit") || t.includes("garage") || t.includes("cave") || t.includes("encombrants");
+
+        const mentionsMid =
+          t.includes("rénovation") || t.includes("renovation") || t.includes("salle de bain") ||
+          t.includes("cuisine") || t.includes("appartement") || t.includes("travaux");
+
+        let msg = "";
+
+        if (mentionsBig && !mentionsSmall) {
+          msg = "💡 Suggestion : <strong>Grande</strong> (souvent mieux pour démolition / gros volumes).";
+        } else if (mentionsSmall && !mentionsBig) {
+          msg = "💡 Suggestion : <strong>Petite</strong> (déchets verts / débarras / petit volume).";
+        } else if (mentionsMid) {
+          msg = "💡 Suggestion : <strong>Moyenne</strong> (rénovation maison / appartement).";
+        } else if (t.length > 25) {
+          msg = "💡 Besoin d’aide ? Décrivez le volume approximatif : on vous conseille la taille.";
+        }
+
+        if (msg) {
+          box.innerHTML = msg;
+          box.style.display = "block";
+        } else {
+          box.innerHTML = "";
+          box.style.display = "none";
+        }
+      };
+
+      desc.addEventListener("input", suggest);
+      size.addEventListener("change", () => {
+        // si l'utilisateur choisit, on garde discret
+        box.style.display = "none";
+      });
+
+      suggest();
+    });
+  </script>
+
 </body>
-
 </html>
