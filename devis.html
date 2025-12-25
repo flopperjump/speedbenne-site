@@ -238,6 +238,182 @@
                 padding: 20px;
             }
         }
+
+        /* =========================
+   RESPONSIVE PRO (à ajouter en bas)
+   ========================= */
+
+/* éviter les débordements horizontaux */
+html, body { overflow-x: hidden; }
+* { max-width: 100%; }
+
+/* NAV : meilleur comportement global */
+nav {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  main {
+    margin: 28px auto;
+    gap: 22px;
+    padding: 0 16px;
+  }
+
+  .form-container {
+    padding: 28px;
+  }
+
+  form {
+    padding: 22px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  nav img {
+    width: 95px;
+    height: auto;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .nav-phone {
+    margin-top: 6px;
+  }
+
+  header {
+    padding: 26px 14px;
+  }
+
+  header h1 {
+    font-size: clamp(1.5em, 6vw, 2.1em);
+    letter-spacing: 1.5px;
+  }
+
+  header p {
+    font-size: 1.02em;
+  }
+
+  main {
+    margin: 18px auto;
+    padding: 0 14px;
+  }
+
+  .form-container {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .form-container h2 {
+    font-size: 1.5em;
+  }
+
+  form {
+    padding: 16px;
+    border-radius: 14px;
+    gap: 14px;
+  }
+
+  form label {
+    font-size: 1em;
+  }
+
+  form input,
+  form select,
+  form textarea,
+  form button {
+    font-size: 1rem;
+    padding: 12px 12px;
+    border-radius: 10px;
+  }
+
+  form textarea {
+    height: 140px;
+  }
+
+  /* hover inutile sur mobile */
+  form button:hover {
+    transform: none;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 12px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.45em;
+  }
+
+  header p {
+    font-size: 0.98em;
+  }
+
+  .form-container {
+    padding: 14px;
+  }
+
+  form {
+    padding: 14px;
+  }
+
+  footer p {
+    font-size: 0.95em;
+  }
+}
+
+/* iOS notch / safe area (évite les décalages) */
+@supports (padding: max(0px)) {
+  nav {
+    padding-top: calc(5px + env(safe-area-inset-top));
+  }
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
     </style>
 </head>
 

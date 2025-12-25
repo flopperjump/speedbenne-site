@@ -137,6 +137,131 @@
             text-decoration: none;
         }
 
+        /* =========================
+   RESPONSIVE BLOG (à ajouter en bas)
+   ========================= */
+
+/* éviter le scroll horizontal */
+html, body { overflow-x: hidden; }
+
+/* NAV : wrap propre sur mobile */
+nav{
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav a{
+  margin: 0;
+  border-radius: 10px;
+}
+
+/* Conteneur : padding plus safe */
+.blog-container{
+  padding: 18px;
+  margin: 16px auto;
+}
+
+/* Posts : moins “massif” sur mobile */
+.blog-post{
+  padding: 16px;
+}
+
+/* Images : déjà ok, on force juste au cas où */
+.blog-post img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* IMPORTANT : ton footer est fixed -> il masque le bas des articles
+   => on ajoute un espace en bas */
+body{
+  padding-bottom: 80px;
+}
+
+/* Tablette */
+@media (max-width: 1024px){
+  header{
+    font-size: 22px;
+    padding: 18px 10px;
+  }
+
+  .blog-post h2{
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  header{
+    font-size: 20px;
+    padding: 16px 10px;
+  }
+
+  nav{
+    justify-content: center;
+    padding: 10px 10px;
+  }
+
+  nav a{
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .blog-container{
+    width: 100%;
+    margin: 14px auto;
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .blog-post{
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .blog-post h2{
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .blog-post p,
+  .more-content{
+    font-size: 15px;
+  }
+
+  /* Listes dans l'article 2 */
+  .more-content ul{
+    padding-left: 18px;
+    margin-top: 10px;
+  }
+
+  /* Footer : sur mobile, fixed c’est relou.
+     On le repasse en normal. */
+  footer{
+    position: static;
+    padding: 14px 10px;
+  }
+
+  /* Du coup plus besoin d’un gros padding bottom */
+  body{
+    padding-bottom: 20px;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px){
+  nav a{
+    width: 100%;
+    text-align: center;
+  }
+
+  .blog-post h2{
+    font-size: 18px;
+  }
+}
+
     </style>
 </head>
 <body>

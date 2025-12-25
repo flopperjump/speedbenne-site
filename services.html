@@ -232,6 +232,164 @@
                 transform: translateY(0);
             }
         }
+        /* =====================================================
+   RESPONSIVE – SERVICES (MOBILE / TABLETTE)
+===================================================== */
+
+/* Sécurité overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar ul {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =========================
+   TABLETTE (≤ 1024px)
+========================= */
+@media (max-width: 1024px) {
+  header {
+    padding: 40px 16px;
+  }
+
+  header h1 {
+    font-size: 2.1rem;
+  }
+
+  .services {
+    padding: 40px 16px;
+    gap: 36px;
+  }
+
+  .service {
+    gap: 20px;
+  }
+
+  .service-content {
+    padding: 24px;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* Navbar en colonne */
+  .navbar {
+    flex-direction: column;
+    padding: 10px 14px;
+  }
+
+  .navbar ul {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .navbar ul li a {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.04);
+  }
+
+  /* Header */
+  header {
+    padding: 30px 14px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* SERVICES : colonne */
+  .service,
+  .service:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .service img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .service img:hover {
+    transform: none; /* pas de zoom tactile */
+  }
+
+  .service-content {
+    padding: 18px;
+    text-align: center;
+  }
+
+  .service-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .service-content p {
+    font-size: 0.95rem;
+  }
+
+  .service-content a {
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   PETIT MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .service-content {
+    padding: 14px;
+  }
+
+  .service-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .service-content p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   SAFE AREA iPhone (notch)
+========================= */
+@supports (padding: max(0px)) {
+  .navbar {
+    padding-top: calc(10px + env(safe-area-inset-top));
+  }
+
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
     </style>
 </head>
 <body>
